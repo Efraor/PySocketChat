@@ -49,16 +49,12 @@ while True:
         break
 
 # 4. (Opcional) El cliente recibe respuesta del servidor
-
-
 # 5. El cliente puede seguir enviando mensajes dentro de un bucle
     respuesta = cliente.recv(1024).decode()
     print(f"respuesta del servidor: {respuesta}")
 
 
 # 6. Cuando el cliente decide, envía un mensaje de cierre o simplemente cierra la conexión
-
-
 # 7. El cliente cierra su socket
 cliente.close()
 print("conexion cerrada")

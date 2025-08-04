@@ -47,13 +47,9 @@ print("Servidor escuchando")
 
     #Def manejar_clientes
         # 8. El servidor recibe data (mensaje) por parte del cliente dentro de un bucle
-        
         # 9. El servidor procesa o muestra el mensaje recibido
-        
         # 10. (Opcional) El servidor envía respuesta al cliente   
-        
         # 11. Si el cliente se desconecta, el servidor cierra la conexión con ese cliente
-
         # 13. El servidor sigue aceptando otros clientes en paralelo con threads
 def manejar_cliente(cliente, adrr):
     print(f"Conexion establecida con {adrr}")
@@ -74,16 +70,12 @@ def manejar_cliente(cliente, adrr):
     cliente.close()
 
 # 4. El servidor espera conexiones dentro de un bucle infinito
-while True:
-# 5. Cuando un cliente intenta conectarse, el servidor acepta la conexión
-    cliente, adrr = server.accept()
-
-# 6. El servidor crea un nuevo hilo (thread) para manejar a ese cliente
-    hilo_cliente = threading.Thread(target=manejar_cliente, args=((cliente, adrr))) 
-
-# 7. El hilo ejecuta una función donde:
-    hilo_cliente.start()
+def aceptar_conecciones():
+    while True:
+        cliente, adrr = server.accept()
+        hilo_cliente = threading.Thread(target=manejar_cliente, args=((cliente, adrr))) 
+        hilo_cliente.start()
     
     
-# 12. El hilo termina cuando el cliente cierra la conexión
+aceptar_conecciones()
 
