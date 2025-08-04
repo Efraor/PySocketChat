@@ -33,6 +33,7 @@ server.listen()
 
 # 4. El servidor acepta conexiones
 cliente, addr = server.accept()
+print(f"Conectado a {addr[0]}:{addr[1]}")
 
 # 8. El servidor recibe data (mensaje) por parte del cliente
 mensaje_1 = cliente.recv(1024).decode()
