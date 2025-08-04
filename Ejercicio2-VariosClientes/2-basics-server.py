@@ -74,8 +74,8 @@ def manejar_cliente(cliente, adrr):
     cliente.close()
 
 # 4. El servidor espera conexiones dentro de un bucle infinito
-# 5. Cuando un cliente intenta conectarse, el servidor acepta la conexión
 while True:
+# 5. Cuando un cliente intenta conectarse, el servidor acepta la conexión
     cliente, adrr = server.accept()
 
 # 6. El servidor crea un nuevo hilo (thread) para manejar a ese cliente
